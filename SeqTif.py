@@ -42,7 +42,8 @@ for idx in range(1,2):
         
         # the microParam file contains info, pixel size , wavelength ..., 
         # so we apply Microscoppic Parameters to the current_img
-            
+        microParam.adopt(current_img)
+        
         #do the deconvolution
         #result_img = current_img.cmle(psf , it = 50, snr = 2, q=0.01, bgMode="manual", bg=[0], brMode="auto")
         result_img = current_img.cmle(psf , it = 2, snr = 2, q=0.01, bgMode="manual", bg=[0])
